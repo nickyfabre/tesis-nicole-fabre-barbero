@@ -1,0 +1,1614 @@
+{
+ "label2taxid": {
+  "ATN": 358,
+  "Am2": 28108,
+  "BS": 1423,
+  "BXL": 36873,
+  "CRH": 3055,
+  "CV": 536,
+  "Cup": 119219,
+  "DVH": 881,
+  "K12": 562,
+  "Ne1": 915,
+  "Nu1": 44577,
+  "NV": 1034015,
+  "Nm1": 1231,
+  "PaD": 266,
+  "ES18": 101570,
+  "F0": 1283336,
+  "F2": 12016,
+  "M13": 1977402,
+  "P22": 2908168,
+  "PD": 43306,
+  "Pfl": 294,
+  "KF7": 301,
+  "841": 216596,
+  "VF": 1041145,
+  "AK199": 2433,
+  "LT2": 28901,
+  "137": 1280,
+  "259": 1280,
+  "SMS": 40324,
+  "HB2": 274
+ },
+ "lineage": {
+  "358": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    131567,
+    "cellular organisms",
+    "cellular root"
+   ],
+   [
+    2,
+    "Bacteria",
+    "domain"
+   ],
+   [
+    3379134,
+    "Pseudomonadati",
+    "kingdom"
+   ],
+   [
+    1224,
+    "Pseudomonadota",
+    "phylum"
+   ],
+   [
+    28211,
+    "Alphaproteobacteria",
+    "class"
+   ],
+   [
+    356,
+    "Hyphomicrobiales",
+    "order"
+   ],
+   [
+    82115,
+    "Rhizobiaceae",
+    "family"
+   ],
+   [
+    227290,
+    "Rhizobium/Agrobacterium group",
+    "no rank"
+   ],
+   [
+    357,
+    "Agrobacterium",
+    "genus"
+   ],
+   [
+    1183400,
+    "Agrobacterium tumefaciens complex",
+    "species group"
+   ],
+   [
+    358,
+    "Agrobacterium tumefaciens",
+    "species"
+   ]
+  ],
+  "28108": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    131567,
+    "cellular organisms",
+    "cellular root"
+   ],
+   [
+    2,
+    "Bacteria",
+    "domain"
+   ],
+   [
+    3379134,
+    "Pseudomonadati",
+    "kingdom"
+   ],
+   [
+    1224,
+    "Pseudomonadota",
+    "phylum"
+   ],
+   [
+    1236,
+    "Gammaproteobacteria",
+    "class"
+   ],
+   [
+    135622,
+    "Alteromonadales",
+    "order"
+   ],
+   [
+    72275,
+    "Alteromonadaceae",
+    "family"
+   ],
+   [
+    2903219,
+    "Alteromonas/Salinimonas group",
+    "no rank"
+   ],
+   [
+    226,
+    "Alteromonas",
+    "genus"
+   ],
+   [
+    28108,
+    "Alteromonas macleodii",
+    "species"
+   ]
+  ],
+  "1423": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    131567,
+    "cellular organisms",
+    "cellular root"
+   ],
+   [
+    2,
+    "Bacteria",
+    "domain"
+   ],
+   [
+    1783272,
+    "Bacillati",
+    "kingdom"
+   ],
+   [
+    1239,
+    "Bacillota",
+    "phylum"
+   ],
+   [
+    91061,
+    "Bacilli",
+    "class"
+   ],
+   [
+    1385,
+    "Caryophanales",
+    "order"
+   ],
+   [
+    186817,
+    "Bacillaceae",
+    "family"
+   ],
+   [
+    1386,
+    "Bacillus",
+    "genus"
+   ],
+   [
+    653685,
+    "Bacillus subtilis group",
+    "species group"
+   ],
+   [
+    1423,
+    "Bacillus subtilis",
+    "species"
+   ]
+  ],
+  "36873": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    131567,
+    "cellular organisms",
+    "cellular root"
+   ],
+   [
+    2,
+    "Bacteria",
+    "domain"
+   ],
+   [
+    3379134,
+    "Pseudomonadati",
+    "kingdom"
+   ],
+   [
+    1224,
+    "Pseudomonadota",
+    "phylum"
+   ],
+   [
+    28216,
+    "Betaproteobacteria",
+    "class"
+   ],
+   [
+    80840,
+    "Burkholderiales",
+    "order"
+   ],
+   [
+    119060,
+    "Burkholderiaceae",
+    "family"
+   ],
+   [
+    1822464,
+    "Paraburkholderia",
+    "genus"
+   ],
+   [
+    36873,
+    "Paraburkholderia xenovorans",
+    "species"
+   ]
+  ],
+  "3055": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    131567,
+    "cellular organisms",
+    "cellular root"
+   ],
+   [
+    2759,
+    "Eukaryota",
+    "domain"
+   ],
+   [
+    33090,
+    "Viridiplantae",
+    "kingdom"
+   ],
+   [
+    3041,
+    "Chlorophyta",
+    "phylum"
+   ],
+   [
+    2692248,
+    "core chlorophytes",
+    "clade"
+   ],
+   [
+    3166,
+    "Chlorophyceae",
+    "class"
+   ],
+   [
+    2812636,
+    "CS clade",
+    "clade"
+   ],
+   [
+    3042,
+    "Chlamydomonadales",
+    "order"
+   ],
+   [
+    3051,
+    "Chlamydomonadaceae",
+    "family"
+   ],
+   [
+    3052,
+    "Chlamydomonas",
+    "genus"
+   ],
+   [
+    3055,
+    "Chlamydomonas reinhardtii",
+    "species"
+   ]
+  ],
+  "536": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    131567,
+    "cellular organisms",
+    "cellular root"
+   ],
+   [
+    2,
+    "Bacteria",
+    "domain"
+   ],
+   [
+    3379134,
+    "Pseudomonadati",
+    "kingdom"
+   ],
+   [
+    1224,
+    "Pseudomonadota",
+    "phylum"
+   ],
+   [
+    28216,
+    "Betaproteobacteria",
+    "class"
+   ],
+   [
+    206351,
+    "Neisseriales",
+    "order"
+   ],
+   [
+    1499392,
+    "Chromobacteriaceae",
+    "family"
+   ],
+   [
+    535,
+    "Chromobacterium",
+    "genus"
+   ],
+   [
+    536,
+    "Chromobacterium violaceum",
+    "species"
+   ]
+  ],
+  "119219": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    131567,
+    "cellular organisms",
+    "cellular root"
+   ],
+   [
+    2,
+    "Bacteria",
+    "domain"
+   ],
+   [
+    3379134,
+    "Pseudomonadati",
+    "kingdom"
+   ],
+   [
+    1224,
+    "Pseudomonadota",
+    "phylum"
+   ],
+   [
+    28216,
+    "Betaproteobacteria",
+    "class"
+   ],
+   [
+    80840,
+    "Burkholderiales",
+    "order"
+   ],
+   [
+    119060,
+    "Burkholderiaceae",
+    "family"
+   ],
+   [
+    106589,
+    "Cupriavidus",
+    "genus"
+   ],
+   [
+    119219,
+    "Cupriavidus metallidurans",
+    "species"
+   ]
+  ],
+  "881": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    131567,
+    "cellular organisms",
+    "cellular root"
+   ],
+   [
+    2,
+    "Bacteria",
+    "domain"
+   ],
+   [
+    3379134,
+    "Pseudomonadati",
+    "kingdom"
+   ],
+   [
+    200940,
+    "Thermodesulfobacteriota",
+    "phylum"
+   ],
+   [
+    3031449,
+    "Desulfovibrionia",
+    "class"
+   ],
+   [
+    213115,
+    "Desulfovibrionales",
+    "order"
+   ],
+   [
+    194924,
+    "Desulfovibrionaceae",
+    "family"
+   ],
+   [
+    2802295,
+    "Nitratidesulfovibrio",
+    "genus"
+   ],
+   [
+    881,
+    "Nitratidesulfovibrio vulgaris",
+    "species"
+   ]
+  ],
+  "562": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    131567,
+    "cellular organisms",
+    "cellular root"
+   ],
+   [
+    2,
+    "Bacteria",
+    "domain"
+   ],
+   [
+    3379134,
+    "Pseudomonadati",
+    "kingdom"
+   ],
+   [
+    1224,
+    "Pseudomonadota",
+    "phylum"
+   ],
+   [
+    1236,
+    "Gammaproteobacteria",
+    "class"
+   ],
+   [
+    91347,
+    "Enterobacterales",
+    "order"
+   ],
+   [
+    543,
+    "Enterobacteriaceae",
+    "family"
+   ],
+   [
+    561,
+    "Escherichia",
+    "genus"
+   ],
+   [
+    562,
+    "Escherichia coli",
+    "species"
+   ]
+  ],
+  "915": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    131567,
+    "cellular organisms",
+    "cellular root"
+   ],
+   [
+    2,
+    "Bacteria",
+    "domain"
+   ],
+   [
+    3379134,
+    "Pseudomonadati",
+    "kingdom"
+   ],
+   [
+    1224,
+    "Pseudomonadota",
+    "phylum"
+   ],
+   [
+    28216,
+    "Betaproteobacteria",
+    "class"
+   ],
+   [
+    32003,
+    "Nitrosomonadales",
+    "order"
+   ],
+   [
+    206379,
+    "Nitrosomonadaceae",
+    "family"
+   ],
+   [
+    914,
+    "Nitrosomonas",
+    "genus"
+   ],
+   [
+    915,
+    "Nitrosomonas europaea",
+    "species"
+   ]
+  ],
+  "44577": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    131567,
+    "cellular organisms",
+    "cellular root"
+   ],
+   [
+    2,
+    "Bacteria",
+    "domain"
+   ],
+   [
+    3379134,
+    "Pseudomonadati",
+    "kingdom"
+   ],
+   [
+    1224,
+    "Pseudomonadota",
+    "phylum"
+   ],
+   [
+    28216,
+    "Betaproteobacteria",
+    "class"
+   ],
+   [
+    32003,
+    "Nitrosomonadales",
+    "order"
+   ],
+   [
+    206379,
+    "Nitrosomonadaceae",
+    "family"
+   ],
+   [
+    914,
+    "Nitrosomonas",
+    "genus"
+   ],
+   [
+    44577,
+    "Nitrosomonas ureae",
+    "species"
+   ]
+  ],
+  "1034015": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    131567,
+    "cellular organisms",
+    "cellular root"
+   ],
+   [
+    2157,
+    "Archaea",
+    "domain"
+   ],
+   [
+    1783275,
+    "Thermoproteati",
+    "kingdom"
+   ],
+   [
+    651137,
+    "Nitrososphaerota",
+    "phylum"
+   ],
+   [
+    1643678,
+    "Nitrososphaeria",
+    "class"
+   ],
+   [
+    1033996,
+    "Nitrososphaerales",
+    "order"
+   ],
+   [
+    1033997,
+    "Nitrososphaeraceae",
+    "family"
+   ],
+   [
+    497726,
+    "Nitrososphaera",
+    "genus"
+   ],
+   [
+    1034015,
+    "Nitrososphaera viennensis",
+    "species"
+   ]
+  ],
+  "1231": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    131567,
+    "cellular organisms",
+    "cellular root"
+   ],
+   [
+    2,
+    "Bacteria",
+    "domain"
+   ],
+   [
+    3379134,
+    "Pseudomonadati",
+    "kingdom"
+   ],
+   [
+    1224,
+    "Pseudomonadota",
+    "phylum"
+   ],
+   [
+    28216,
+    "Betaproteobacteria",
+    "class"
+   ],
+   [
+    32003,
+    "Nitrosomonadales",
+    "order"
+   ],
+   [
+    206379,
+    "Nitrosomonadaceae",
+    "family"
+   ],
+   [
+    35798,
+    "Nitrosospira",
+    "genus"
+   ],
+   [
+    1231,
+    "Nitrosospira multiformis",
+    "species"
+   ]
+  ],
+  "266": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    131567,
+    "cellular organisms",
+    "cellular root"
+   ],
+   [
+    2,
+    "Bacteria",
+    "domain"
+   ],
+   [
+    3379134,
+    "Pseudomonadati",
+    "kingdom"
+   ],
+   [
+    1224,
+    "Pseudomonadota",
+    "phylum"
+   ],
+   [
+    28211,
+    "Alphaproteobacteria",
+    "class"
+   ],
+   [
+    204455,
+    "Rhodobacterales",
+    "order"
+   ],
+   [
+    31989,
+    "Paracoccaceae",
+    "family"
+   ],
+   [
+    265,
+    "Paracoccus",
+    "genus"
+   ],
+   [
+    266,
+    "Paracoccus denitrificans",
+    "species"
+   ]
+  ],
+  "101570": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    10239,
+    "Viruses",
+    "acellular root"
+   ],
+   [
+    2731341,
+    "Duplodnaviria",
+    "realm"
+   ],
+   [
+    2731360,
+    "Heunggongvirae",
+    "kingdom"
+   ],
+   [
+    2731618,
+    "Uroviricota",
+    "phylum"
+   ],
+   [
+    2731619,
+    "Caudoviricetes",
+    "class"
+   ],
+   [
+    2788787,
+    "unclassified Caudoviricetes",
+    "no rank"
+   ],
+   [
+    101570,
+    "Enterobacteria phage ES18",
+    "species"
+   ]
+  ],
+  "1283336": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    10239,
+    "Viruses",
+    "acellular root"
+   ],
+   [
+    2731341,
+    "Duplodnaviria",
+    "realm"
+   ],
+   [
+    2731360,
+    "Heunggongvirae",
+    "kingdom"
+   ],
+   [
+    2731618,
+    "Uroviricota",
+    "phylum"
+   ],
+   [
+    2731619,
+    "Caudoviricetes",
+    "class"
+   ],
+   [
+    3424297,
+    "Caudoviricetes incertae sedis",
+    "no rank"
+   ],
+   [
+    3424631,
+    "Andersonviridae",
+    "family"
+   ],
+   [
+    1985285,
+    "Ounavirinae",
+    "subfamily"
+   ],
+   [
+    1198140,
+    "Felixounavirus",
+    "genus"
+   ],
+   [
+    1985310,
+    "Felixounavirus felixO1",
+    "species"
+   ],
+   [
+    1283336,
+    "Salmonella phage Felix O1 VT1",
+    "no rank"
+   ]
+  ],
+  "12016": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    10239,
+    "Viruses",
+    "acellular root"
+   ],
+   [
+    2559587,
+    "Riboviria",
+    "realm"
+   ],
+   [
+    2732396,
+    "Orthornavirae",
+    "kingdom"
+   ],
+   [
+    2732407,
+    "Lenarviricota",
+    "phylum"
+   ],
+   [
+    2842243,
+    "Leviviricetes",
+    "class"
+   ],
+   [
+    2842247,
+    "Norzivirales",
+    "order"
+   ],
+   [
+    2842319,
+    "Fiersviridae",
+    "family"
+   ],
+   [
+    2842664,
+    "Emesvirus",
+    "genus"
+   ],
+   [
+    329852,
+    "Emesvirus zinderi",
+    "species"
+   ],
+   [
+    12016,
+    "Enterobacteria phage f2",
+    "no rank"
+   ]
+  ],
+  "1977402": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    10239,
+    "Viruses",
+    "acellular root"
+   ],
+   [
+    2731342,
+    "Floreoviria",
+    "realm"
+   ],
+   [
+    2732090,
+    "Loebvirae",
+    "kingdom"
+   ],
+   [
+    2732410,
+    "Hofneiviricota",
+    "phylum"
+   ],
+   [
+    2732411,
+    "Faserviricetes",
+    "class"
+   ],
+   [
+    2732094,
+    "Tubulavirales",
+    "order"
+   ],
+   [
+    10860,
+    "Inoviridae",
+    "family"
+   ],
+   [
+    10861,
+    "Inovirus",
+    "genus"
+   ],
+   [
+    1977402,
+    "Inovirus M13",
+    "species"
+   ]
+  ],
+  "2908168": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    10239,
+    "Viruses",
+    "acellular root"
+   ],
+   [
+    2731341,
+    "Duplodnaviria",
+    "realm"
+   ],
+   [
+    2731360,
+    "Heunggongvirae",
+    "kingdom"
+   ],
+   [
+    2731618,
+    "Uroviricota",
+    "phylum"
+   ],
+   [
+    2731619,
+    "Caudoviricetes",
+    "class"
+   ],
+   [
+    3424297,
+    "Caudoviricetes incertae sedis",
+    "no rank"
+   ],
+   [
+    186794,
+    "Lederbergvirus",
+    "genus"
+   ],
+   [
+    10754,
+    "Lederbergvirus P22",
+    "species"
+   ],
+   [
+    2908168,
+    "Salmonella phage P22",
+    "no rank"
+   ]
+  ],
+  "43306": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    131567,
+    "cellular organisms",
+    "cellular root"
+   ],
+   [
+    2,
+    "Bacteria",
+    "domain"
+   ],
+   [
+    3379134,
+    "Pseudomonadati",
+    "kingdom"
+   ],
+   [
+    1224,
+    "Pseudomonadota",
+    "phylum"
+   ],
+   [
+    1236,
+    "Gammaproteobacteria",
+    "class"
+   ],
+   [
+    72274,
+    "Pseudomonadales",
+    "order"
+   ],
+   [
+    135621,
+    "Pseudomonadaceae",
+    "family"
+   ],
+   [
+    2901189,
+    "Halopseudomonas",
+    "genus"
+   ],
+   [
+    136844,
+    "Halopseudomonas pertucinogena group",
+    "species group"
+   ],
+   [
+    43306,
+    "Pseudomonas denitrificans (nom. rej.)",
+    "species"
+   ]
+  ],
+  "294": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    131567,
+    "cellular organisms",
+    "cellular root"
+   ],
+   [
+    2,
+    "Bacteria",
+    "domain"
+   ],
+   [
+    3379134,
+    "Pseudomonadati",
+    "kingdom"
+   ],
+   [
+    1224,
+    "Pseudomonadota",
+    "phylum"
+   ],
+   [
+    1236,
+    "Gammaproteobacteria",
+    "class"
+   ],
+   [
+    72274,
+    "Pseudomonadales",
+    "order"
+   ],
+   [
+    135621,
+    "Pseudomonadaceae",
+    "family"
+   ],
+   [
+    286,
+    "Pseudomonas",
+    "genus"
+   ],
+   [
+    136843,
+    "Pseudomonas fluorescens group",
+    "species group"
+   ],
+   [
+    294,
+    "Pseudomonas fluorescens",
+    "species"
+   ]
+  ],
+  "301": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    131567,
+    "cellular organisms",
+    "cellular root"
+   ],
+   [
+    2,
+    "Bacteria",
+    "domain"
+   ],
+   [
+    3379134,
+    "Pseudomonadati",
+    "kingdom"
+   ],
+   [
+    1224,
+    "Pseudomonadota",
+    "phylum"
+   ],
+   [
+    1236,
+    "Gammaproteobacteria",
+    "class"
+   ],
+   [
+    72274,
+    "Pseudomonadales",
+    "order"
+   ],
+   [
+    135621,
+    "Pseudomonadaceae",
+    "family"
+   ],
+   [
+    3236654,
+    "Ectopseudomonas",
+    "genus"
+   ],
+   [
+    301,
+    "Ectopseudomonas oleovorans",
+    "species"
+   ]
+  ],
+  "216596": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    131567,
+    "cellular organisms",
+    "cellular root"
+   ],
+   [
+    2,
+    "Bacteria",
+    "domain"
+   ],
+   [
+    3379134,
+    "Pseudomonadati",
+    "kingdom"
+   ],
+   [
+    1224,
+    "Pseudomonadota",
+    "phylum"
+   ],
+   [
+    28211,
+    "Alphaproteobacteria",
+    "class"
+   ],
+   [
+    356,
+    "Hyphomicrobiales",
+    "order"
+   ],
+   [
+    82115,
+    "Rhizobiaceae",
+    "family"
+   ],
+   [
+    227290,
+    "Rhizobium/Agrobacterium group",
+    "no rank"
+   ],
+   [
+    379,
+    "Rhizobium",
+    "genus"
+   ],
+   [
+    3019933,
+    "Rhizobium johnstonii",
+    "species"
+   ],
+   [
+    216596,
+    "Rhizobium johnstonii 3841",
+    "strain"
+   ]
+  ],
+  "1041145": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    131567,
+    "cellular organisms",
+    "cellular root"
+   ],
+   [
+    2,
+    "Bacteria",
+    "domain"
+   ],
+   [
+    3379134,
+    "Pseudomonadati",
+    "kingdom"
+   ],
+   [
+    1224,
+    "Pseudomonadota",
+    "phylum"
+   ],
+   [
+    28211,
+    "Alphaproteobacteria",
+    "class"
+   ],
+   [
+    356,
+    "Hyphomicrobiales",
+    "order"
+   ],
+   [
+    82115,
+    "Rhizobiaceae",
+    "family"
+   ],
+   [
+    227290,
+    "Rhizobium/Agrobacterium group",
+    "no rank"
+   ],
+   [
+    379,
+    "Rhizobium",
+    "genus"
+   ],
+   [
+    384,
+    "Rhizobium leguminosarum",
+    "species"
+   ],
+   [
+    387,
+    "Rhizobium leguminosarum bv. viciae",
+    "no rank"
+   ],
+   [
+    1041145,
+    "Rhizobium leguminosarum bv. viciae VF39",
+    "strain"
+   ]
+  ],
+  "2433": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    131567,
+    "cellular organisms",
+    "cellular root"
+   ],
+   [
+    2,
+    "Bacteria",
+    "domain"
+   ],
+   [
+    3379134,
+    "Pseudomonadati",
+    "kingdom"
+   ],
+   [
+    1224,
+    "Pseudomonadota",
+    "phylum"
+   ],
+   [
+    28211,
+    "Alphaproteobacteria",
+    "class"
+   ],
+   [
+    204455,
+    "Rhodobacterales",
+    "order"
+   ],
+   [
+    2854170,
+    "Roseobacteraceae",
+    "family"
+   ],
+   [
+    2433,
+    "Roseobacter",
+    "genus"
+   ]
+  ],
+  "28901": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    131567,
+    "cellular organisms",
+    "cellular root"
+   ],
+   [
+    2,
+    "Bacteria",
+    "domain"
+   ],
+   [
+    3379134,
+    "Pseudomonadati",
+    "kingdom"
+   ],
+   [
+    1224,
+    "Pseudomonadota",
+    "phylum"
+   ],
+   [
+    1236,
+    "Gammaproteobacteria",
+    "class"
+   ],
+   [
+    91347,
+    "Enterobacterales",
+    "order"
+   ],
+   [
+    543,
+    "Enterobacteriaceae",
+    "family"
+   ],
+   [
+    590,
+    "Salmonella",
+    "genus"
+   ],
+   [
+    28901,
+    "Salmonella enterica",
+    "species"
+   ]
+  ],
+  "1280": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    131567,
+    "cellular organisms",
+    "cellular root"
+   ],
+   [
+    2,
+    "Bacteria",
+    "domain"
+   ],
+   [
+    1783272,
+    "Bacillati",
+    "kingdom"
+   ],
+   [
+    1239,
+    "Bacillota",
+    "phylum"
+   ],
+   [
+    91061,
+    "Bacilli",
+    "class"
+   ],
+   [
+    1385,
+    "Caryophanales",
+    "order"
+   ],
+   [
+    90964,
+    "Staphylococcaceae",
+    "family"
+   ],
+   [
+    1279,
+    "Staphylococcus",
+    "genus"
+   ],
+   [
+    1280,
+    "Staphylococcus aureus",
+    "species"
+   ]
+  ],
+  "40324": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    131567,
+    "cellular organisms",
+    "cellular root"
+   ],
+   [
+    2,
+    "Bacteria",
+    "domain"
+   ],
+   [
+    3379134,
+    "Pseudomonadati",
+    "kingdom"
+   ],
+   [
+    1224,
+    "Pseudomonadota",
+    "phylum"
+   ],
+   [
+    1236,
+    "Gammaproteobacteria",
+    "class"
+   ],
+   [
+    135614,
+    "Lysobacterales",
+    "order"
+   ],
+   [
+    32033,
+    "Lysobacteraceae",
+    "family"
+   ],
+   [
+    40323,
+    "Stenotrophomonas",
+    "genus"
+   ],
+   [
+    995085,
+    "Stenotrophomonas maltophilia group",
+    "species group"
+   ],
+   [
+    40324,
+    "Stenotrophomonas maltophilia",
+    "species"
+   ]
+  ],
+  "274": [
+   [
+    1,
+    "root",
+    "no rank"
+   ],
+   [
+    131567,
+    "cellular organisms",
+    "cellular root"
+   ],
+   [
+    2,
+    "Bacteria",
+    "domain"
+   ],
+   [
+    3384194,
+    "Thermotogati",
+    "kingdom"
+   ],
+   [
+    1297,
+    "Deinococcota",
+    "phylum"
+   ],
+   [
+    188787,
+    "Deinococci",
+    "class"
+   ],
+   [
+    68933,
+    "Thermales",
+    "order"
+   ],
+   [
+    188786,
+    "Thermaceae",
+    "family"
+   ],
+   [
+    270,
+    "Thermus",
+    "genus"
+   ],
+   [
+    274,
+    "Thermus thermophilus",
+    "species"
+   ]
+  ]
+ }
+}

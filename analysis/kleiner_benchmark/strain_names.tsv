@@ -1,0 +1,5 @@
+# Strains whose recipe name cannot be matched to NCBI automatically. One row per strain.
+# NCBI_name_or_taxid: the exact NCBI scientific name, or the numeric taxid.
+# Source: how the identity was checked (cite this in the Methods).
+Label	Recipe_name	NCBI_name_or_taxid	Source
+F0	Salmonella phage	1283336	Kleiner Suppl. Data 1 gives only "Salmonella phage"; taxid of the organism of F0 proteins (e.g. UniProt Q6KGF6)

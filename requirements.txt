@@ -1,0 +1,6 @@
+numpy>=2.0
+pandas>=2.0
+scipy>=1.11
+matplotlib>=3.8
+ete3>=3.1     # only for build_taxonomy.py (NCBI Taxonomy)
+pytest>=7     # only for the unit tests
