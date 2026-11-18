@@ -32,7 +32,7 @@ The supplementary tables are tab-separated files in the repository (Supplementar
 |-------|---------|------|
 | S1 | Strains whose name could not be matched to NCBI automatically, with the manual assignment and its source | `analysis/kleiner_benchmark/strain_names.tsv` |
 | S2 | Fraction of each strain's intensity that is shared with other strains, and classification as sharing strain | `analysis/kleiner_benchmark/results/unfiltered/strain_sharing.tsv` |
-| S3 | Headline metrics per arm and design: median x-fold deviation and IQR, L1 distance, absent leakage, log Pearson *r*, Spearman ρ, number of estimates truncated at the minimum value | `analysis/kleiner_benchmark/results/unfiltered/summary.tsv` |
+| S3 | Headline metrics per arm and design: median x-fold deviation and IQR, L1 distance, absent leakage, log Pearson *r*, Spearman ρ, number of imputed estimates | `analysis/kleiner_benchmark/results/unfiltered/summary.tsv` |
 | S4 | Expected and estimated share, log error and x-fold deviation for every strain, arm and design | `analysis/kleiner_benchmark/results/unfiltered/per_species.tsv` |
 | S5 | Planned comparisons between arms: strata, medians, strains improved and worsened, Wilcoxon *p*, bootstrap confidence intervals, equivalence and non-inferiority | `analysis/kleiner_benchmark/results/unfiltered/stats.tsv` |
 | S6 | Estimated share at every node of the species tree, per arm and design | `analysis/kleiner_benchmark/results/unfiltered/nodes.tsv` |

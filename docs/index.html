@@ -172,20 +172,20 @@ proporción de péptidos compartidos y la tasa de identificaciones falsas.
 Conservar los péptidos compartidos en el LCA dio totales correctos para
 los clados, mientras que descartarlos subestimó fuertemente los clados
 formados por cepas emparentadas. A nivel de especie, solo el reparto de
-la señal compartida corrigió las cepas cuya señal es mayormente
-compartida, cuyo error pasó de decenas de veces a menos de tres veces.
-Usar todas las identificaciones ponderadas por 1 − PEP fue
-significativamente más exacto que aplicar un umbral estricto en dos de
-los tres diseños de la comunidad, principalmente porque recuperó las
-cepas poco abundantes, a costa de un leve aumento de la señal falsa en
-las cepas ausentes. En las simulaciones, cuando la confianza de las
-identificaciones correctas dependía de su intensidad, como en los datos
-reales, esta ponderación redujo el error de las especies raras en casi
-todas las comunidades, mientras que usar todas las identificaciones sin
-ponderarlas aumentó la señal falsa. Estos resultados muestran que los
-péptidos compartidos deben conservarse en el árbol y repartirse entre
-las especies, y que la confianza de cada identificación puede reemplazar
-a un umbral fijo al estimar abundancias.</p>
+la señal compartida corrigió las cepas con señal mayormente compartida,
+cuyo error pasó de decenas de veces a menos de tres veces. Usar todas
+las identificaciones ponderadas por 1 − PEP fue significativamente más
+exacto que aplicar un umbral estricto en dos de los tres diseños de la
+comunidad, principalmente porque recuperó las cepas poco abundantes, a
+costa de un leve aumento de la señal falsa en las cepas ausentes. En las
+simulaciones, cuando la confianza de las identificaciones correctas
+dependía de su intensidad, como en los datos reales, esta ponderación
+redujo el error de las especies raras en casi todas las comunidades,
+mientras que usar todas las identificaciones sin ponderarlas aumentó la
+señal falsa. Estos resultados muestran que los péptidos compartidos
+deben conservarse en el árbol y repartirse entre las especies, y que la
+confianza de cada identificación puede reemplazar a un umbral fijo al
+estimar abundancias.</p>
 <p><strong>Palabras clave:</strong> metaproteómica, péptidos
 compartidos, ancestro común más cercano, probabilidad de error
 posterior, estimación de biomasa, comunidad artificial.</p>
@@ -311,10 +311,15 @@ occupying a reasonably well-defined habitat with distinct
 physico-chemical properties. The term refers not only to the
 microorganisms involved but also to their theatre of activity, which
 results in the formation of specific ecological niches. The term
-“microbiota” refers to the living organisms in a given microbiome <span class="citation" data-cites="berg2020">(<a href="#ref-berg2020" role="doc-biblioref">Berg et al., 2020</a>)</span>. Microbiomes exhibit
-extensive taxonomic diversity, and there is growing evidence that they
-take part in virtually all processes of the biosphere <span class="citation" data-cites="vandenbossche2025">(<a href="#ref-vandenbossche2025" role="doc-biblioref">Van Den Bossche et
-al., 2025</a>)</span>.</p>
+“microbiota” refers to the living organisms in a given microbiome <span class="citation" data-cites="berg2020">(<a href="#ref-berg2020" role="doc-biblioref">Berg et al., 2020</a>)</span>. Microbiomes are made
+up of bacteria, archaea, bacteriophages and other viruses, fungi and
+protozoa, and their taxonomic composition is highly diverse. In most
+cases they are highly structured in both membership and function, and
+there is growing evidence of their importance in virtually all processes
+of the biosphere <span class="citation" data-cites="vandenbossche2025">(<a href="#ref-vandenbossche2025" role="doc-biblioref">Van Den Bossche et al., 2025</a>)</span>.
+Therefore, to understand a microbiome and its interaction with its
+environment or host, it is necessary to know which organisms make it up
+and in what proportions, as well as what functions they perform.</p>
 <p>The term “metaproteomics” was first used for the large-scale
 characterization of the entire protein complement of environmental
 microbiota at a given point in time <span class="citation" data-cites="wilmes2004">(<a href="#ref-wilmes2004" role="doc-biblioref">Wilmes and Bond, 2004</a>)</span>. Mass
@@ -579,10 +584,11 @@ separately from frozen aliquots of a single culture of each organism
 <span class="citation" data-cites="kleiner2017">(<a href="#ref-kleiner2017" role="doc-biblioref">Kleiner et al.,
 2017</a>)</span>, so they reflect the variation of assembly, preparation
 and measurement, not the biological variation between communities.</p>
-<p>The expected proportion of strain <em>s</em> in design <em>c</em>,
-<em>e</em>ₛ,ᶜ, is its added protein amount divided by the total protein
-added in that design, so that Σₛ <em>e</em>ₛ,ᶜ = 1. Strains are referred
-to by the codes of <span class="citation" data-cites="kleiner2017">Kleiner et al. (<a href="#ref-kleiner2017" role="doc-biblioref">2017</a>)</span>.</p>
+<p>The expected proportion of strain <em>s</em> in design <em>c</em>
+(<em>e</em><sub>s,c</sub>) is its added protein amount divided by the
+total protein added in that design, so that Σ<sub>s</sub>
+<em>e</em><sub>s,c</sub> = 1. Strains are referred to by the codes of
+<span class="citation" data-cites="kleiner2017">Kleiner et al. (<a href="#ref-kleiner2017" role="doc-biblioref">2017</a>)</span>.</p>
 <h2 id="identification-and-error-probabilities">3.2 Identification and
 error probabilities</h2>
 <p>RAW files were processed with quantMS 1.7.0 <span class="citation" data-cites="dai2024">(<a href="#ref-dai2024" role="doc-biblioref">Dai et
@@ -702,14 +708,16 @@ divided by that of all unique identifications.</li>
 <li><strong>Rigid LCA.</strong> Each identification is assigned to the
 LCA of its candidate set and its intensity is summed at that node.
 Shared signal stays at internal nodes, so each leaf receives only its
-unique identifications.</li>
+unique identifications. Because shared signal reaches no leaf, in this
+arm the leaf proportions add up to less than 1; each is expressed as a
+fraction of the total signal of the run.</li>
 <li><strong>Proportional.</strong> A single step of equation (2) with
 <em>w</em>ᵢ = <em>I</em>ᵢ, the MS1 intensity of the identification,
 started from the Unique estimate: each shared identification is split in
 proportion to the unique signal of its candidates.</li>
 <li><strong>EM.</strong> Equation (2) with <em>w</em>ᵢ = <em>I</em>ᵢ,
-iterated from a uniform π to convergence (total change below 10⁻¹⁰),
-which removes the dependence on the starting point.</li>
+iterated from a uniform π to convergence (total change below 10⁻¹⁰), so
+that the result does not depend on the Unique estimate.</li>
 <li><strong>EM + PEP.</strong> As EM, but with all identifications and
 the weight of equation (3):</li>
 </ol>
@@ -730,13 +738,13 @@ little false signal reach D (pep6).</p>
 statistical analysis</h2>
 <p><strong>Per-strain estimate.</strong> Run proportions were averaged
 over the two technical replicates and then over the four biological
-replicates of each design, giving one estimate <em>m</em>ₛ,ᶜ per strain
-and design. The unit of analysis is the strain, not the run: the 24 runs
-are not independent, because technical replicates share a sample and all
-replicates of a design share the same expected values, and treating them
-as independent observations would be pseudoreplication. Thus <em>n</em>
-= 26 present strains in Constant and Protein and <em>n</em> = 30 in
-Uneven.</p>
+replicates of each design, giving one estimate <em>m</em><sub>s,c</sub>
+per strain and design. The unit of analysis is the strain, not the run:
+the 24 runs are not independent, because technical replicates share a
+sample and all replicates of a design share the same expected values,
+and treating them as independent observations would be
+pseudoreplication. Thus <em>n</em> = 26 present strains in Constant and
+Protein and <em>n</em> = 30 in Uneven.</p>
 <p><strong>Tree nodes.</strong> The primary evaluation uses the leaves,
 because internal nodes are sums of leaves and add no independent
 observations. The abundance of an internal node is the sum of its leaves
@@ -747,28 +755,34 @@ descriptively with the summed expected proportions of their strains.</p>
 measured as the x-fold deviation from its expected proportion: the ratio
 <em>m</em>/<em>e</em> or its inverse, whichever is larger than 1. A
 perfect estimate has a deviation of 1, and one at double or half the
-true value, a deviation of 2. This is the metric used by <span class="citation" data-cites="kleiner2017">Kleiner et al. (<a href="#ref-kleiner2017" role="doc-biblioref">2017</a>)</span>, so the
-results are comparable with theirs. For each arm and design, the median
-x-fold deviation and its interquartile range (IQR) are reported,
-together with the L1 distance, Σₛ |<em>m</em>ₛ − <em>e</em>ₛ|, which
-measures the total misplaced proportion (0 = perfect, 2 = completely
-different), and the absent leakage, the percentage of the estimate
-assigned to DVH, Ne1, Nu1 and Nm1 in Constant and Protein.</p>
+true value, a deviation of 2. It is an adaptation of the metric of <span class="citation" data-cites="kleiner2017">Kleiner et al. (<a href="#ref-kleiner2017" role="doc-biblioref">2017</a>)</span>, in which
+a perfect estimate is 0, undetected species are excluded and the mean is
+reported. Here, estimates equal to zero were imputed with a minimum
+value of 10⁻⁶ (0.0001 %), so that all arms are evaluated on the same
+strains and an undetected strain counts as an error, and the median is
+reported, because a few strains with very large errors would dominate
+the mean. For each arm and design, the median x-fold deviation and its
+interquartile range (IQR) are reported; the L1 distance, Σₛ |<em>m</em>ₛ
+− <em>e</em>ₛ|, which measures the total misplaced proportion (0 =
+perfect, 2 = completely different); and the absent leakage, the
+percentage of the estimate assigned to DVH, Ne1, Nu1 and Nm1 in Constant
+and Protein.</p>
 <p><strong>Planned comparisons.</strong> Four paired comparisons were
 planned, one per added component: Unique → Proportional and Rigid LCA →
 Proportional (splitting the shared signal), Proportional → EM (iterating
-the split) and EM → EM + PEP (weighting instead of thresholding). For
+the split from a starting point that does not depend on the unique
+peptides) and EM → EM + PEP (weighting instead of thresholding). For
 each comparison and design, a two-sided Wilcoxon signed-rank test was
 applied to the log error of each strain, |log₁₀(<em>m</em>/<em>e</em>)|,
 with Holm correction across the three designs (α = 0.05). This test does
 not assume normality and, on the log scale, weighs a 2-fold error on a
 rare strain the same as on an abundant one. Confidence intervals for the
-difference in median error were computed from 10,000 bootstrap resamples
-of strains. Because a non-significant <em>p</em> is not enough to claim
-that two arms agree, the interval is reported for Proportional → EM. EM
-+ PEP was considered non-inferior to EM when the upper bound of the
-interval was below 0.05 log₁₀ units, that is, when a typical strain was
-no more than 12 % further from its true value; this margin was fixed
+difference in median error were computed from 10,000 paired bootstrap
+resamples of strains. Because a non-significant <em>p</em> is not enough
+to claim that two arms agree, the interval is reported for Proportional
+→ EM. EM + PEP was considered non-inferior to EM when the upper bound of
+the interval was below 0.05 log₁₀ units, that is, when a typical strain
+was no more than 12 % further from its true value; this margin was fixed
 before the analysis.</p>
 <p><strong>Additional analyses.</strong> Besides the four comparisons,
 five analyses without a planned test were run:</p>
@@ -785,8 +799,10 @@ without a statistical test.</li>
 EM + PEP comparison was repeated for strains with an expected proportion
 below 1 %.</li>
 <li><em>Changes between designs</em>: for each pair of designs, the
-observed fold change of each strain was compared with the expected
-one.</li>
+observed fold change of each strain was compared with the expected one,
+using the Pearson correlation on the strains present in both designs,
+the Spearman correlation including the strains absent from one of them
+and, for the latter, whether the direction of change was recovered.</li>
 <li><em>Standard table</em>: the five arms were also applied to the
 standard table, to check whether the conclusions depend on the FDR
 filter.</li>
@@ -797,17 +813,17 @@ very few false identifications after a strict threshold. To evaluate the
 arms under other conditions, they were also applied to simulated
 communities.</p>
 <p>Each simulated community has 30 species in 6 genera of 5, with
-abundances spanning about two orders of magnitude and 20 % absent
+abundances spanning about three orders of magnitude and 20 % absent
 species. For each of 8,000 peptides an origin species is drawn, and
 every other species also contains it with probability <em>p</em> if it
 is in the same genus and <em>p</em>/25 otherwise, so that peptides are
 shared more between related species. A peptide’s intensity is the sum of
 the abundances of the species that contain it, with noise. False
 identifications are added at a chosen rate, and scores and decoys are
-simulated so that the PEP is estimated as in the real data. As a
-reference, EM was also run on all identifications without weights (“EM,
-no threshold”). Four studies were run, with 20 independent communities
-per setting (Table 1).</p>
+simulated so that the PEP is estimated with the same target–decoy
+procedure as in the real data. As a reference, EM was also run on all
+identifications without weights (“EM, no threshold”). Four studies were
+run, with 20 independent communities per setting (Table 1).</p>
 <div data-custom-style="Leyenda">
 <p><strong>Table 1.</strong> Simulation studies. Each study varies one
 factor and holds the others fixed.</p>
@@ -857,12 +873,17 @@ equal-sized groups, only 2 % of those in the lowest-intensity group pass
 PEP &lt; 0.01, against 39 % of those in the highest-intensity group.
 Study D compares the model of this thesis, which assigns signal only to
 the leaves of the tree, with a model in which internal nodes can also
-keep part of the signal, as in MiCId <span class="citation" data-cites="alves2025 alves2026">(<a href="#ref-alves2025" role="doc-biblioref">Alves et al., 2025</a>; <a href="#ref-alves2026" role="doc-biblioref">Alves et al., 2026</a>)</span>. It is a
-reimplementation of that idea on the same evidence, not the MiCId
+keep part of the signal. It is inspired by MiCId, which estimates
+abundances at every taxonomic rank <span class="citation" data-cites="alves2025 alves2026">(<a href="#ref-alves2025" role="doc-biblioref">Alves et al., 2025</a>; <a href="#ref-alves2026" role="doc-biblioref">Alves et al., 2026</a>)</span>, but it is a
+simplified version of that idea: a single EM in which the candidates of
+each identification are all the nodes between its LCA and its strains,
+whereas MiCId repeats the EM separately at each rank. It was implemented
+in Python on the same evidence as the other arms; it is not the MiCId
 software.</p>
 <p>In the simulations the communities are independent replicates, so the
 unit of analysis is the community. Arms were compared with a paired
-Wilcoxon test over the 20 communities, with Holm correction within each
+Wilcoxon test over the 20 communities, applied to the L1 distance and to
+the median log error, with Holm correction across the settings of each
 study.</p>
 <h2 id="software-and-availability">3.6 Software and availability</h2>
 <p>All methods were implemented in Python 3 (NumPy, pandas, SciPy,
@@ -1638,7 +1659,7 @@ strains, and classification as sharing strain</td>
 <td>S3</td>
 <td>Headline metrics per arm and design: median x-fold deviation and
 IQR, L1 distance, absent leakage, log Pearson <em>r</em>, Spearman ρ,
-number of estimates truncated at the minimum value</td>
+number of imputed estimates</td>
 <td><code>analysis/kleiner_benchmark/results/unfiltered/summary.tsv</code></td>
 </tr>
 <tr class="even">
