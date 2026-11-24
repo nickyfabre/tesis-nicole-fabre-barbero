@@ -3,7 +3,7 @@
 
     python3 make_fig1.py <outdir>
 
-Left: the toy community (tree with a genus A+B, an unrelated strain C and an absent strain D)
+Left: the toy community (tree with two strains A+B of one species, an unrelated strain C and an absent strain D)
 and its six peptide identifications, drawn as boxes wired to the strains that contain them.
 Right: one card per arm, with a mini-tree showing where the shared signal goes and bars with
 the intensity each strain receives. Numbers checked with taxoshare.allocate_species.
@@ -25,12 +25,12 @@ LOWCONF = "#e15759"
 T = {
     "en": dict(
         input="Input: community and identifications", output="Output of each arm",
-        absent="D\n(absent)", genus="genus", shared="shared", lowconf="low confidence",
+        absent="D\n(absent)", genus="species", shared="shared", lowconf="low confidence",
         foot=("Number = MS1 intensity.  Dashed boxes = low-confidence identifications (PEP ≥ 0.01):\n"
               "removed by the threshold in arms 1–4, weighted by 1 − PEP in arm 5."),
         arms=["1  Unique", "2  Rigid LCA", "3  Proportional", "4  EM", "5  EM + PEP"],
         desc=["discards pep3",
-              "keeps pep3 at the genus node",
+              "keeps pep3 at the species node",
               "splits pep3 once, 3:1,\nanchored on unique peptides",
               "starts 50:50 and re-splits\nuntil stable (same here)",
               "uses every identification,\nweighted by 1 − PEP"],
@@ -40,12 +40,12 @@ T = {
     ),
     "es": dict(
         input="Entrada: comunidad e identificaciones", output="Resultado de cada estrategia",
-        absent="D\n(ausente)", genus="género", shared="compartido", lowconf="baja confianza",
+        absent="D\n(ausente)", genus="especie", shared="compartido", lowconf="baja confianza",
         foot=("Número = intensidad MS1.  Cajas punteadas = identificaciones de baja confianza (PEP ≥ 0,01):\n"
               "el umbral las elimina en las estrategias 1–4; en la 5 se ponderan por 1 − PEP."),
         arms=["1  Únicos", "2  LCA rígido", "3  Proporcional", "4  EM", "5  EM + PEP"],
         desc=["descarta pep3",
-              "deja pep3 en el nodo\ndel género",
+              "deja pep3 en el nodo\nde la especie",
               "reparte pep3 una vez, 3:1,\nanclado en los únicos",
               "parte de 50:50 y repite\nhasta estabilizarse (igual aquí)",
               "usa todas las identificaciones,\nponderadas por 1 − PEP"],
@@ -89,7 +89,7 @@ def leaf(ax, x, y, name, r, absent=False, label=True):
 
 
 SIDE = {
-    "en": ["A and B belong to the same genus; C is unrelated;",
+    "en": ["A and B are strains of one species; C is unrelated;",
            "D is absent from the sample.",
            "",
            "Each box is one identification, with its",
@@ -100,7 +100,7 @@ SIDE = {
            "pep5 and pep6 have low confidence (PEP ≥ 0.01):",
            "arms 1–4 remove them; arm 5 weights them",
            "by 1 − PEP. pep6 is a false identification."],
-    "es": ["A y B son del mismo género; C no está",
+    "es": ["A y B son cepas de una misma especie; C no está",
            "emparentada; D no está en la muestra.",
            "",
            "Cada caja es una identificación, con su",
@@ -113,9 +113,9 @@ SIDE = {
            "pondera por 1 − PEP. pep6 es una identificación falsa."],
 }
 DESC = {
-    "en": ["discards pep3", "keeps pep3 at\nthe genus node", "splits pep3 once,\nanchored on unique",
+    "en": ["discards pep3", "keeps pep3 at\nthe species node", "splits pep3 once,\nanchored on unique",
            "starts 50:50, re-splits\nuntil stable", "all identifications,\nweighted by 1 − PEP"],
-    "es": ["descarta pep3", "deja pep3 en el\nnodo del género", "reparte pep3 una vez,\nanclado en los únicos",
+    "es": ["descarta pep3", "deja pep3 en el\nnodo de la especie", "reparte pep3 una vez,\nanclado en los únicos",
            "parte de 50:50 y repite\nhasta estabilizarse", "todas las identificaciones,\nponderadas por 1 − PEP"],
 }
 PEPX = {"pep1": 1.3, "pep3": 3.45, "pep2": 5.6, "pep4": 7.6, "pep5": 9.55, "pep6": 11.5}
