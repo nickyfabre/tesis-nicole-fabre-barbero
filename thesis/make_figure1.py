@@ -83,79 +83,113 @@ def leaf(ax, x, y, name, r, absent=False, label=True):
     ax.add_patch(Circle((x, y), r, fc="white" if absent else COL[name], ec=COL[name] if absent else "white",
                         ls="--" if absent else "-", lw=1.6, zorder=4))
     if label:
-        ax.text(x, y, name, ha="center", va="center", fontsize=10 if r > 0.3 else 8.5, weight="bold",
+        ax.text(x, y, name, ha="center", va="center", fontsize=15 if r > 0.4 else 11.5, weight="bold",
                 color=COL[name] if absent else "white", zorder=5)
 
 
-def input_panel(ax, t):
-    ax.text(0.1, 12.55, t["input"], fontsize=13, weight="bold", color=INK)
-    root, gen = (5.0, 11.0), (2.55, 9.9)
-    lv = {"A": (1.6, 8.6), "B": (3.5, 8.6), "C": (6.3, 8.6), "D": (8.6, 8.6)}
+
+SIDE = {
+    "en": ["A and B belong to the same genus; C is unrelated;",
+           "D is absent from the sample.",
+           "",
+           "Each box is one identification, with its",
+           "MS1 intensity and its PEP.",
+           "",
+           "pep3 is shared by A and B.",
+           "",
+           "pep5 and pep6 have low confidence (PEP ≥ 0.01):",
+           "arms 1–4 remove them; arm 5 weights them",
+           "by 1 − PEP. pep6 is a false identification."],
+    "es": ["A y B son del mismo género; C no está",
+           "emparentada; D no está en la muestra.",
+           "",
+           "Cada caja es una identificación, con su",
+           "intensidad MS1 y su PEP.",
+           "",
+           "pep3 es compartido por A y B.",
+           "",
+           "pep5 y pep6 son de baja confianza (PEP ≥ 0,01):",
+           "las estrategias 1–4 los eliminan; la 5 los",
+           "pondera por 1 − PEP. pep6 es una identificación falsa."],
+}
+DESC = {
+    "en": ["discards pep3", "keeps pep3 at\nthe genus node", "splits pep3 once,\nanchored on unique",
+           "starts 50:50, re-splits\nuntil stable", "all identifications,\nweighted by 1 − PEP"],
+    "es": ["descarta pep3", "deja pep3 en el\nnodo del género", "reparte pep3 una vez,\nanclado en los únicos",
+           "parte de 50:50 y repite\nhasta estabilizarse", "todas las identificaciones,\nponderadas por 1 − PEP"],
+}
+PEPX = {"pep1": 1.3, "pep3": 3.45, "pep2": 5.6, "pep4": 7.6, "pep5": 9.55, "pep6": 11.5}
+
+
+def top_panel(ax, t, lang):
+    ax.text(0.1, 9.55, t["input"], fontsize=17, weight="bold", color=INK, va="center")
+    root, gen = (6.6, 8.6), (3.45, 7.55)
+    lv = {"A": (2.3, 6.2), "B": (4.6, 6.2), "C": (8.6, 6.2), "D": (11.5, 6.2)}
     for a, b in [(root, gen), (gen, lv["A"]), (gen, lv["B"]), (root, lv["C"]), (root, lv["D"])]:
-        ax.plot([a[0], b[0]], [a[1], b[1]], color=GRID, lw=2.2, zorder=1)
-    ax.add_patch(Circle(root, 0.18, fc=GRID, ec="none", zorder=2))
-    ax.add_patch(Circle(gen, 0.22, fc=COL["Genus"], ec="none", zorder=2))
-    ax.text(gen[0] - 0.35, gen[1] + 0.1, t["genus"], ha="right", va="center", fontsize=9.5, color=COL["Genus"])
+        ax.plot([a[0], b[0]], [a[1], b[1]], color=GRID, lw=2.6, zorder=1)
+    ax.add_patch(Circle(root, 0.2, fc=GRID, ec="none", zorder=2))
+    ax.add_patch(Circle(gen, 0.26, fc=COL["Genus"], ec="none", zorder=2))
+    ax.text(gen[0] - 0.4, gen[1] + 0.1, t["genus"], ha="right", va="center", fontsize=14, color=COL["Genus"])
     for n, (x, y) in lv.items():
-        leaf(ax, x, y, n, 0.38, absent=(n == "D"))
-    ax.text(lv["D"][0] + 0.5, lv["D"][1], t["absent"].split("\n")[1], ha="left", va="center",
-            fontsize=9, color=QUIET)
-    by = 5.6
-    for name, inten, pep, strains, x in PEPTIDES:
-        low = pep >= 0.01
-        sh = len(strains) > 1
+        leaf(ax, x, y, n, 0.45, absent=(n == "D"))
+    by = 3.1
+    for name, inten, pep, strains, _ in PEPTIDES:
+        x = PEPX[name]
+        low, sh = pep >= 0.01, len(strains) > 1
         ec = LOWCONF if low else (COL["Genus"] if sh else "#9aa5b1")
-        fc = "#f3eefa" if sh else "white"
         for s in strains:
             sx, sy = lv[s]
-            ax.plot([x, sx], [by + 0.75, sy - 0.38], color=ec, lw=1.6, ls="--" if low else "-", zorder=2)
-        box(ax, x, by, 1.25, 1.5, fc, ec, ls="--" if low else "-")
-        ax.text(x, by + 0.42, name, ha="center", va="center", fontsize=9.5, weight="bold", color=INK, zorder=5)
-        ax.text(x, by - 0.02, str(inten), ha="center", va="center", fontsize=11, color=INK, zorder=5)
-        ax.text(x, by - 0.45, f"PEP {num(pep, t['dec'])}", ha="center", va="center", fontsize=8, color=QUIET,
-                zorder=5)
-    ax.text(2.55, by - 1.15, t["shared"], ha="center", va="top", fontsize=9, color=COL["Genus"], weight="bold")
-    ax.text(7.9, by - 1.15, t["lowconf"], ha="center", va="top", fontsize=9, color=LOWCONF, weight="bold")
-    ax.text(0.1, 2.9, t["foot"], fontsize=8.6, color=QUIET, va="top", linespacing=1.5)
+            ax.plot([x, sx], [by + 1.05, sy - 0.45], color=ec, lw=2, ls="--" if low else "-", zorder=2)
+        box(ax, x, by, 1.7, 2.1, "#f3eefa" if sh else "white", ec, ls="--" if low else "-", lw=1.8)
+        ax.text(x, by + 0.6, name, ha="center", va="center", fontsize=14, weight="bold", color=INK, zorder=5)
+        ax.text(x, by, str(inten), ha="center", va="center", fontsize=16, color=INK, zorder=5)
+        ax.text(x, by - 0.62, f"PEP {num(pep, t['dec'])}", ha="center", va="center", fontsize=11.5,
+                color=QUIET, zorder=5)
+    ax.text(PEPX["pep3"], by - 1.4, t["shared"], ha="center", va="top", fontsize=13, color=COL["Genus"], weight="bold")
+    ax.text((PEPX["pep5"] + PEPX["pep6"]) / 2, by - 1.4, t["lowconf"], ha="center", va="top", fontsize=13,
+            color=LOWCONF, weight="bold")
+    ax.add_patch(FancyBboxPatch((13.1, 1.3), 10.7, 7.6, boxstyle="round,pad=0,rounding_size=0.25",
+                                fc="#f7f8fa", ec="#cfd8e3", lw=1.3, zorder=0))
+    for k, line in enumerate(SIDE[lang]):
+        ax.text(13.5, 8.35 - k * 0.62, line, fontsize=13, color=INK if line[:3] in ("pep", "Eac", "Cad", "A a", "A y") or k in (1,) else INK,
+                va="center")
 
 
-def card(ax, x0, i, t):
-    w = 4.0
-    ax.add_patch(FancyBboxPatch((x0, 0.55), w, 11.1, boxstyle="round,pad=0,rounding_size=0.2",
+def card(ax, x0, i, t, lang):
+    w = 4.6
+    ax.add_patch(FancyBboxPatch((x0, 0.9), w, 10.0, boxstyle="round,pad=0,rounding_size=0.25",
                                 fc="#f7f8fa" if i < 2 else "#f2f7fd", ec="#cfd8e3", lw=1.3, zorder=0))
     cx = x0 + w / 2
-    ax.text(cx, 11.0, t["arms"][i], ha="center", va="center", fontsize=11.5, weight="bold", color=INK)
-    ax.text(cx, 10.05, t["desc"][i], ha="center", va="center", fontsize=8.6, color=QUIET, linespacing=1.3)
-    # mini-tree
-    root, gen = (x0 + 2.25, 8.35), (x0 + 1.15, 7.6)
-    lv = {"A": (x0 + 0.65, 6.6), "B": (x0 + 1.65, 6.6), "C": (x0 + 2.7, 6.6), "D": (x0 + 3.5, 6.6)}
+    ax.text(cx, 10.25, t["arms"][i], ha="center", va="center", fontsize=16, weight="bold", color=INK)
+    ax.text(cx, 9.25, DESC[lang][i], ha="center", va="center", fontsize=12, color=QUIET, linespacing=1.25)
+    root, gen = (x0 + 2.6, 8.05), (x0 + 1.3, 7.25)
+    lv = {"A": (x0 + 0.7, 6.25), "B": (x0 + 1.9, 6.25), "C": (x0 + 3.1, 6.25), "D": (x0 + 4.0, 6.25)}
     o = OUT[i]
     split = bool(o["shared"])
     for a, b, key in [(root, gen, None), (gen, lv["A"], "A"), (gen, lv["B"], "B"),
                       (root, lv["C"], None), (root, lv["D"], None)]:
         c = SHARED if (split and key) else GRID
-        ax.plot([a[0], b[0]], [a[1], b[1]], color=c, lw=2.4 if c == SHARED else 1.8, zorder=1)
-    ax.add_patch(Circle(root, 0.12, fc=GRID, ec="none", zorder=2))
-    ax.add_patch(Circle(gen, 0.16, fc=COL["Genus"], ec="none", zorder=2))
+        ax.plot([a[0], b[0]], [a[1], b[1]], color=c, lw=3 if c == SHARED else 2.2, zorder=1)
+    ax.add_patch(Circle(root, 0.14, fc=GRID, ec="none", zorder=2))
+    ax.add_patch(Circle(gen, 0.19, fc=COL["Genus"], ec="none", zorder=2))
     for n, (x, y) in lv.items():
-        leaf(ax, x, y, n, 0.24, absent=(n == "D"))
+        leaf(ax, x, y, n, 0.31, absent=(n == "D"))
     if i == 0:
-        ax.text(gen[0], gen[1] + 0.45, "✗", ha="center", va="center", fontsize=15, color="#b3261e", weight="bold")
+        ax.text(gen[0], gen[1] + 0.5, "✗", ha="center", va="center", fontsize=20, color="#b3261e", weight="bold")
     if o["genus"]:
-        box(ax, gen[0] - 0.05, gen[1] + 0.62, 0.75, 0.5, COL["Genus"], COL["Genus"])
-        ax.text(gen[0] - 0.05, gen[1] + 0.62, str(o["genus"]), ha="center", va="center", fontsize=10,
+        box(ax, gen[0] - 0.1, gen[1] + 0.7, 0.95, 0.6, COL["Genus"], COL["Genus"])
+        ax.text(gen[0] - 0.1, gen[1] + 0.7, str(o["genus"]), ha="center", va="center", fontsize=14,
                 weight="bold", color="white", zorder=5)
     if split:
-        for s, dx in (("A", -0.42), ("B", 0.42)):
-            ax.text((gen[0] + lv[s][0]) / 2 + dx, (gen[1] + lv[s][1]) / 2, str(o["shared"][s]), ha="center",
-                    va="center", fontsize=9, weight="bold", color=SHARED)
+        for s, dx in (("A", -0.45), ("B", 0.45)):
+            ax.text((gen[0] + lv[s][0]) / 2 + dx, (gen[1] + lv[s][1]) / 2 + 0.05, str(o["shared"][s]),
+                    ha="center", va="center", fontsize=13, weight="bold", color=SHARED)
     if i == 3:
-        ax.text(cx, 5.85, t["em_iter"], ha="center", va="center", fontsize=8.6, color=SHARED, weight="bold")
+        ax.text(cx, 5.45, t["em_iter"], ha="center", va="center", fontsize=12, color=SHARED, weight="bold")
     if i == 4:
-        ax.text(lv["C"][0] + 0.02, 5.9, "+7", ha="center", va="center", fontsize=9, weight="bold", color="#3d8b3d")
-        ax.text(lv["D"][0], 5.9, "+2", ha="center", va="center", fontsize=9, weight="bold", color=LOWCONF)
-    # bars
-    base, scale, bw = 1.15, 4.0 / 90, 0.5
+        ax.text(lv["C"][0], 5.45, "+7", ha="center", va="center", fontsize=13, weight="bold", color="#3d8b3d")
+        ax.text(lv["D"][0], 5.45, "+2", ha="center", va="center", fontsize=13, weight="bold", color=LOWCONF)
+    base, scale, bw = 1.35, 3.0 / 90, 0.62
     for n, (x, _) in lv.items():
         parts = [(o["own"].get(n, 0), COL[n]), (o["shared"].get(n, 0), SHARED),
                  (o["extra"].get(n, 0), PEP5 if n == "C" else COL["D"])]
@@ -166,8 +200,8 @@ def card(ax, x0, i, t):
                 y += v * scale
         total = sum(v for v, _ in parts)
         if total:
-            ax.text(x, y + 0.12, str(total), ha="center", va="bottom", fontsize=9.5, weight="bold", color=INK)
-    ax.plot([x0 + 0.25, x0 + w - 0.25], [base, base], color=GRID, lw=1, zorder=2)
+            ax.text(x, y + 0.1, str(total), ha="center", va="bottom", fontsize=13, weight="bold", color=INK)
+    ax.plot([x0 + 0.25, x0 + w - 0.25], [base, base], color=GRID, lw=1.2, zorder=2)
 
 
 def main(outdir):
@@ -175,17 +209,18 @@ def main(outdir):
     outdir.mkdir(parents=True, exist_ok=True)
     for lang, name in (("en", "method.png"), ("es", "metodo.png")):
         t = T[lang]
-        fig = plt.figure(figsize=(17, 7.2))
-        ax = fig.add_axes([0, 0.03, 1, 0.95])
-        ax.set_xlim(0, 32.6); ax.set_ylim(0, 13.2); ax.axis("off")
-        input_panel(ax, t)
-        ax.annotate("", xy=(11.15, 6.4), xytext=(10.35, 6.4),
-                    arrowprops=dict(arrowstyle="-|>", color=INK, lw=2, mutation_scale=18))
-        ax.text(11.4 + 2.5 * 4.2 - 0.1, 12.55, t["output"], fontsize=13, weight="bold", color=INK, ha="center")
+        fig = plt.figure(figsize=(12.5, 11.2))
+        top = fig.add_axes([0, 0.56, 1, 0.44]); top.set_xlim(0, 24); top.set_ylim(0.6, 10); top.axis("off")
+        top_panel(top, t, lang)
+        mid = fig.add_axes([0, 0.49, 1, 0.07]); mid.set_xlim(0, 24); mid.set_ylim(0, 1); mid.axis("off")
+        mid.annotate("", xy=(12, 0.05), xytext=(12, 0.95),
+                     arrowprops=dict(arrowstyle="-|>", color=INK, lw=2.6, mutation_scale=26))
+        mid.text(12.5, 0.5, t["output"], ha="left", va="center", fontsize=17, weight="bold", color=INK)
+        bot = fig.add_axes([0, 0, 1, 0.49]); bot.set_xlim(0, 24); bot.set_ylim(0, 11); bot.axis("off")
         for i in range(5):
-            card(ax, 11.4 + i * 4.25, i, t)
-        ax.text(11.4 + 2.5 * 4.25 - 0.1, 0.12, t["legend"], ha="center", va="center", fontsize=8.6, color=QUIET)
-        fig.savefig(outdir / name, dpi=200, bbox_inches="tight", facecolor="white")
+            card(bot, i * 4.85, i, t, lang)
+        bot.text(12, 0.35, t["legend"], ha="center", va="center", fontsize=12, color=QUIET)
+        fig.savefig(outdir / name, dpi=220, bbox_inches="tight", facecolor="white")
         plt.close(fig)
         print("written", outdir / name)
 
