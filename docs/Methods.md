@@ -64,7 +64,7 @@ Figure 1 shows how each arm treats the same evidence in a simplified example.
 ![Figure 1](figures/method.png)
 
 ::: {custom-style="Leyenda"}
-**Figure 1.** The five arms applied to an example with two related strains (A and B), an unrelated strain (C) and an absent strain (D). EM + PEP recovers evidence for C (pep5) but also lets a little false signal reach D (pep6).
+**Figure 1.** The five arms applied to a toy community with two related strains (A and B, same genus), an unrelated strain (C) and an absent strain (D). Left: each identification, with its MS1 intensity and PEP, linked to the strains whose proteomes contain it. Right: where each arm places the shared peptide pep3 (mini-trees) and the intensity each strain receives (bars). EM + PEP recovers evidence for C (pep5) but also lets a little false signal reach D (pep6).
 :::
 
 ## 3.4 Evaluation and statistical analysis
